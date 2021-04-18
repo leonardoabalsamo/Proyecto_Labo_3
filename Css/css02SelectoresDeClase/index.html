@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>css02SelectoresDeClase</title>
     <style media="screen">
 
@@ -35,7 +36,7 @@
       line-height : 50px;
       }
 
-      p.claseDestacado {
+      p.claseDestacado , span.claseDestacado {
       font-size:20px;
       color:black;
       font-weight:bold;
@@ -61,7 +62,7 @@
         line-height : 30px;
       }
       img.imagenAl50{
-        max-width:"50%";
+        max-width:50%;
       }
 
     </style>
@@ -78,7 +79,7 @@
       <p class="claseContenidoComun">Este párrafo toma el estilo definido en la etiqueta style en el header del documento como class="claseContenidoComun"</p>
       <p id="idUnico">Párrafo formateado por un estilo particular definido en el style del documento para un párrafo específico id="idUnico"</p>
       <h1>Todas las imágenes con class="imagenAl50" en esta página se encuentran limitadas al 50% del ancho del viewport mas allá de su tamaño real en pixeles:</h1>
-      <img src="imagen1.jpg" class="imagenAl50">
+      <img src="./imagen1.jpg" class="imagenAl50">
 
       <br><br>
       <a href="/LDA/index.php">Volver al Indice</a>
