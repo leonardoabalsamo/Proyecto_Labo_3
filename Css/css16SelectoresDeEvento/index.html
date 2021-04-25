@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang=es dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      div.fondo{
+        background-color:lightblue;
+        width:90%;
+        margin:auto;
+        overflow:auto;
+      }
+
+      div.boton{
+        background-color:lightgrey;
+        color:black;
+        border:solid;
+        border-color:darkblue;
+        border-width:2px;
+        float:left;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        box-sizing:border-box;
+      }
+      div.boton a:hover{
+        background-color:darkblue;
+        border-color:darkblue;
+        color:white;
+        }
+      div.boton a:active{
+          background-color:darkblue;
+          border-color:darkblue;
+          color:white;
+        }
+
+      div.nuevaFila {
+          clear:both;
+          margin-bottom: 40px;
+        }
+
+      .uno:focus{
+        background-color:#33CEFF;
+      }
+
+      div.form{
+        margin:auto;
+        font-size:12px;
+        box-sizing:border-box;
+      }
+      div.cuadro{
+        height:120px;
+        width:120px;
+        float:left;
+        border:solid;
+        border-width:1px;
+        border-color:black;
+        margin-top: 20px;
+      }
+      .img1{
+        max-height:60%;
+        max-width:100%;
+        height:100%;
+        width:100%;
+      }
+      .img2{
+        max-height:75%;
+        max-width:100%;
+        height:100%;
+        width:100%;
+      }
+      .img3{
+        max-width:70%;
+        max-height:100%;
+        height:100%;
+        width:100%;
+      }
+      div.cuadro:active{
+        height:400px;
+        width:600px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+        <div class="boton">
+            <a href="respuesta1.html">Opcion 1.</a>
+        </div>
+        <div class="boton">
+            <a href="respuesta2.html">Opcion 2.</a>
+        </div>
+        <div class="boton">
+            <a href="respuesta3.html">Opcion 3.</a>
+        </div>
+        <div class="nuevaFila"></div>
+          <div class="form">
+            <label for="apellido">Apellido:</label><br>
+            <input class="uno" type="text" name="apellido" ><br>
+            <label for="nombre">Nombre:</label><br>
+            <input class="uno" type="text" name="nombre" ><br>
+          </div>
+          <div class="cuadro">
+            <img src="imagen1.jpg" class="img1">
+          </div>
+          <div class="cuadro">
+            <img src="imagen2.jpg" class="img2">
+          </div>
+          <div class="cuadro">
+            <img src="imagen3.jpg" class="img1">
+          </div>
+          <div class="cuadro">
+            <img src="imagen4.jpg" class="img3">
+          </div>
+
+    </div>
+
+    <br><br>
+    <a href="../index.html">Volver al Indice</a>
+
+
+
+  </body>
+</html>
