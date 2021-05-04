@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+      html, body {
+        height:100%;
+        width:100%;
+        margin:0%;
+        padding:0%;
+      }
+
+      div.fondo{
+        height:610px;
+        width:100%;
+        margin:0%;
+        padding:0%;
+        background-color:#0D6784;
+      }
+
+      h1{font-size:40px;color:black;font:bold;text-align:center;margin:0%;}
+
+      p{font-size:10px;}
+
+      label{ font-size: 10px;color:black;}
+
+
+      form {
+        height:410px;
+        margin:0px;
+        background-color:lightgrey;
+        padding:0px;
+        overflow:auto;
+        box-sizing:border-box;
+      }
+
+      .boton input{
+        height:50px;
+        background-color:#AAAAAA;
+        cursor:pointer;
+      }
+
+      div.barraControl{
+        display:block;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        width:100%;
+        height:70px;
+        background-color:#6E6E6E;
+      }
+
+      div.caja{
+        text-align:left;
+        height:120px;
+        background-color:lightgrey;
+        border-color:black;
+        border:solid;
+        float:left;
+        padding:0.5%;
+        border-width: 1px;
+
+      }
+      @media(min-width:900px){
+          .caja{ width:18.8%; }
+      }
+
+      @media (min-width:700px) and (max-width:900px){
+          .caja{ width: 25%; }
+      }
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+
+    <h1>Formulario</h1>
+
+    <form class="" action="respuestaFormulario.html" target="_blank" method="get">
+      <div class="caja">
+        <label for="apellido">1.Apellido:</label><br>
+        <input type="text" name="apelido" value="">
+      </div>
+      <div class="caja">
+        <label for="nombre">2.Nombre:</label><br>
+        <input type="text" name="nombre" value="">
+      </div>
+      <div class="caja">
+        <label for="clave">3.Contraseña:</label><br>
+        <input type="text" name="clave" value="">
+      </div>
+      <div class="caja">
+        <label for="des">4.Campo Deshabilitado:</label><br>
+        <input type="text" disabled name="apelido" value="Campo Deshabilitado">
+      </div>
+      <div class="caja">
+        <label for="fecha">5.Fecha y Hora:</label><br>
+        <input type="datetime-local"  name="fecha" >
+      </div>
+      <div class="caja">
+        <label for="dni">6.DNI:</label><br>
+        <input type="number" name="dni" value="">
+      </div>
+      <div class="caja">
+          <p>7.Actividades Extracurriculares:</p>
+          <input type="checkbox" name="act" value="">
+          <label for="act">Musica</label><br>
+          <input type="checkbox" name="act" value="">
+          <label for="act">Pintura Artística</label><br>
+          <input type="checkbox" name="act" value="">
+          <label for="act">Deportes</label><br>
+          <input type="checkbox" name="act" value="">
+          <label for="act">Teatro</label><br>
+      </div>
+      <div class="caja">
+          <p>8.Sexo:</p>
+          <input type="radio" name="sex" value="m">
+          <label for="sex">Masculino</label><br>
+          <input type="radio" name="sex" value="f">
+          <label for="sex">Femenino</label><br>
+      </div>
+      <div class="caja">
+          <p>9. Vacío:</p>
+      </div>
+      <div class="caja">
+        <label for="estudios">10. Estudios Cursados:</label>
+          <select id="estudios" name="estudios">
+            <option value="pri" selected="selected">Primarios</option>
+                        <option value="sec">Secundarios</option>
+                        <option value="ter">Terciarios</option>
+                        <option value="uni">Universitarios</option>
+                        <option value="pos">Posgrado</option>
+            </select>
+      </div>
+      <div class="caja">
+        <label for="area">11. Área de Desempeño:</label>
+          <select id="area" name="area">
+            <option value="un" selected="selected">Administracion</option>
+                        <option value="do">Ventas</option>
+                        <option value="tre">Fabrica</option>
+            </select>
+      </div>
+      <div class="caja">
+        <label for="turno">12. Turno:</label>
+          <select id="turno" name="turno">
+            <option value="ma" selected="selected">Mañana</option>
+                        <option value="tar">Tarde</option>
+                        <option value="noc">Noche</option>
+            </select>
+      </div>
+      <div class="caja">
+          <p>13.Conduce:</p>
+          <label for="sex">Si</label>
+          <input type="radio" name="con" value="s">
+          <label for="con">No</label>
+          <input type="radio" name="con" value="n">
+      </div>
+
+    </form>
+    <div class="barraControl">
+      <div class="boton">
+        <input type="submit" name="Enviar" value="ENVIAR">
+        <input type="reset" name="reset" value="RESET">
+      </div>
+    </div>
+
+    <p>PIE DEL FORMULARIO</p>
+
+
+  </div>
+  </body>
+</html>

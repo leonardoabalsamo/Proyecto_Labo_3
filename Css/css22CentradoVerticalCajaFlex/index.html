@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Caja Flexible</title>
+    <style media="screen">
+
+      html, body {
+        height:100%;
+        margin:0%;
+      }
+
+      div.fondo{
+        background-color:lightyellow;
+        height:640px;
+        width:90%;
+        margin:auto;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-around;
+        align-items:center;
+        flex-wrap:wrap;
+        overflow:auto;
+        }
+
+      .img{
+        height:200px;
+        width:300px;
+        max-height:100%;
+        max-width:100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+      <img src="img.jpg" class="img">
+      <img src="img.jpg" class="img">
+      <img src="img.jpg" class="img">
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+      html, body {
+        height:100%;
+        width:100%;
+        margin:0%;
+      }
+
+      div.fondo{
+        height:643px;
+        width:100%;
+        margin:0%;
+        background-color:#0D6784;
+        padding-top:1%;
+      }
+
+      table {
+        border-color:black;
+        border:solid;
+        border-width:4px;
+        border-collapse: collapse;
+        margin-top:1%;
+        height:100px;
+        width:100%;
+      }
+
+      thead tr{
+        background-color:#FF8000;
+        color:white;
+        height:40px;
+      }
+
+      tbody {
+        overflow:auto;
+        height:20px;
+      }
+
+      @media(max-width:1200px){
+        [campo-dato:'Skype']{display:none;}
+      }
+
+      tbody tr:nth-child(odd){ background:rgba(0,0,0,.2); }
+
+      tbody tr{color:white; font-style:arial; text-align:center; border-width:10px;}
+
+
+
+      h1{font-size:20px;color:white;font:bold;text-align:center;margin:0%;}
+
+    </style>
+  </head>
+  <body>
+    <div class="fondo">
+      <h1>Rwd(Responsive Web Design) TABLE: Thead fijo & Tbody scroleable</h1>
+      <table>
+        <thead> <!-- Refiere a los nombres de las columnas de la tabla -->
+          <tr>
+            <th campo-dato='id'>Id</th>
+            <th campo-dato='nick'>Nick</th>
+            <th campo-dato='mail'>Mail</th>
+            <th campo-dato='web'>Web</th>
+            <th campo-dato='twitter'>Twitter</th>
+            <th campo-dato='skype'>Skype</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td campo-dato='id'>1</td>
+            <td campo-dato='nick'>Leonardo</td>
+            <td campo-dato='mail'>lda@gmail.com</td>
+            <td campo-dato='web'>http://lda.com.ar</td>
+            <td campo-dato='twitter'>@lda</td>
+            <td campo-dato='skype'>lda@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>2</td>
+            <td campo-dato='nick'>Carolina</td>
+            <td campo-dato='mail'>carola@gmail.com</td>
+            <td campo-dato='web'>http://caro.com.ar</td>
+            <td campo-dato='twitter'>@carol</td>
+            <td campo-dato='skype'>carola@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>3</td>
+            <td campo-dato='nick'>Carlos</td>
+            <td campo-dato='mail'>ccarlos@gmail.com</td>
+            <td campo-dato='web'>http://carlosaba.com.ar</td>
+            <td campo-dato='twitter'>@cccarlos</td>
+            <td campo-dato='skype'>ccarlos@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>4</td>
+            <td campo-dato='nick'>Veronica</td>
+            <td campo-dato='mail'>vera123@gmail.com</td>
+            <td campo-dato='web'>http://verauni.com.ar</td>
+            <td campo-dato='twitter'>@verita</td>
+            <td campo-dato='skype'>vvera@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr><tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr><tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr><tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr><tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr><tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+          <tr>
+            <td campo-dato='id'>5</td>
+            <td campo-dato='nick'>Rocio</td>
+            <td campo-dato='mail'>raba1@gmail.com</td>
+            <td campo-dato='web'>http://roaba.com.ar</td>
+            <td campo-dato='twitter'>@laroro</td>
+            <td campo-dato='skype'>raba1@gmail.com</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
