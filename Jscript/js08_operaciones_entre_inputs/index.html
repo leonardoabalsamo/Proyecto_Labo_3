@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+      html , body {
+        width:100%;
+        height:100%;
+        margin:0%;
+        padding:0%;
+        background-color: #2BA8F9;
+      }
+
+      .contenedor{
+        background-color: #CACED1;
+        width:50%;
+        height:50%;
+        margin:auto;
+        padding:0%;
+        border:solid;
+        border-color:white;
+        align-items:center;
+        box-sizing:border-box;
+      }
+
+      .contenedor2{
+        background-color: #084E83;
+        width:50%;
+        height:15%;
+        margin:auto;
+        border:solid;
+        border-color:white;
+        align-items:center;
+        box-sizing:border-box;
+        border-top-width:1px;
+      }
+      input {
+        margin-left:10%;
+        margin-top:3%;
+        width:300px;
+        height:40px;
+      }
+      label {
+        margin-left:10%;
+        margin-top:3%;
+        padding:2px;
+        width:150px;
+        height:40px;
+        font-size:27px;
+        color:#2BA8F9;
+        border:solid;
+        border-width:2px;
+      }
+
+      button{
+        background-color:#CACED1;
+        color:black;
+        width:30%;
+        height:40px;
+        float:left;
+        margin-left:2.5%;
+        margin-top:3%;
+        font-size:20px;
+        border:solid;
+        border-color:white;
+        border-width:2px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2 style="color:white; text-align:center; border:solid;">Introducir un valor en los cuadros de texto y luego pulsar el boton para ejecutar la función correspondiente</h2>
+    <div class="contenedor">
+      <label for="ent1">Entrada 1:</label>
+      <input name="ent1" id="ent1"><br>
+
+      <label for="ent2">Entrada 2:</label>
+      <input name="ent2" id="ent2"><br>
+
+      <label for="ent3">Entrada 3:</label>
+      <input name="ent3" id="ent3"><br>
+
+      <label for="res">Resultado:</label>
+      <input name="ent4" id="ent4">
+    </div>
+    <div class="contenedor2">
+      <button id="suma">SUMA</button>
+
+      <button id="prom">PROMEDIO</button>
+
+      <button id="mayor">MAYOR</button>
+    </div>
+    <script type="text/javascript">
+      document.getElementById("suma").onclick= function() {
+        document.getElementById("ent4").value = parseInt(document.getElementById("ent1").value) + parseInt(document.getElementById("ent2").value) + parseInt(document.getElementById("ent3").value);
+      }
+
+      document.getElementById("prom").onclick= function() {
+        document.getElementById("ent4").value = (parseInt(document.getElementById("ent1").value) + parseInt(document.getElementById("ent2").value) + parseInt(document.getElementById("ent3").value))/3;
+      }
+
+      document.getElementById("mayor").onclick= function() {
+        var mayor = 0;
+
+        if ( parseInt(document.getElementById("ent1").value) > mayor) {
+          mayor =  parseInt(document.getElementById("ent1").value);
+          if ( parseInt(document.getElementById("ent2").value)> mayor) {  mayor =  parseInt(document.getElementById("ent2").value) }
+          if ( parseInt(document.getElementById("ent3").value) > mayor) { mayor =  parseInt(document.getElementById("ent3").value)  }
+          }
+
+        document.getElementById("ent4").value = mayor;
+        }
+    </script>
+    <footer style="margin-top:80px;"><a style="text-align: center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href="../index.html">Volver al Indice</a></footer>
+
+
+  </body>
+</html>

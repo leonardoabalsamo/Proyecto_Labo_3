@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ES" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+      html,body{
+        width:100%;
+        height:100%;
+        margin:0%;
+        padding:0%;
+      }
+      button{float:left; margin-left:20px; margin-top: 20px;text-align:center; width:30%;}
+    </style>
+  </head>
+  <body>
+    <button id="incorrecta">Inicialización Incorrecta</button>
+    <button id="correcta">Inicialización Correcta</button>
+    <button id="global">Muestra variable Global</button>
+    <script type="text/javascript">
+      var corr;
+
+      document.getElementById("incorrecta").onclick= function() {
+        var inc = prompt("Ingrese valor para la variable global");
+        alert('El valor de la variable local ingresada es: ' + inc  );
+        alert('El tipo de la variable local ingresada es: ' + typeof inc  );
+      }
+      document.getElementById("correcta").onclick= function() {
+        corr = prompt("Ingrese valor para la variable global");
+        alert('El valor de la variable local ingresada es: ' + corr  );
+        alert('El tipo de la variable local ingresada es: ' + typeof corr  );
+      }
+      document.getElementById("global").onclick= function() {
+        alert('El valor de la variable global ingresada es: ' + corr  );
+      }
+    </script>
+
+
+    <footer style="margin-top:200px;"><a style="text-align: center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href="../index.html">Volver al Indice</a></footer>
+
+  </body>
+</html>

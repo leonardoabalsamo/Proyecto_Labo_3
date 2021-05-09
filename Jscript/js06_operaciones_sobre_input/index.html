@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <input type="text" id="entrada">
+    <button id="muestra">Muestra Valor</button>
+    <button id="suma">Suma 1</button>
+    <button id="cuadrado">x**2</button>
+    <button id="multiplica">Multiplica x 2</button>
+    <button id="eleva">2**X</button>
+
+    <script type="text/javascript">
+
+      document.getElementById("muestra").onclick= function() {
+        var aux = parseInt(document.getElementById("entrada").value);
+        alert("El valor introducido es: " + aux);
+      }
+
+      document.getElementById("suma").onclick= function() {
+        document.getElementById("entrada").value = parseInt(document.getElementById("entrada").value) + 1;
+      }
+
+      document.getElementById("cuadrado").onclick= function() {
+        var aux = parseInt(document.getElementById("entrada").value);
+        document.getElementById("entrada").value = aux * aux ;
+      }
+
+      document.getElementById("multiplica").onclick= function() {
+        document.getElementById("entrada").value =  parseInt(document.getElementById("entrada").value) *2;
+      }
+
+      document.getElementById("eleva").onclick= function() {
+        document.getElementById("entrada").value = 2 ** parseInt(document.getElementById("entrada").value);
+      }
+
+    </script>
+
+    <footer style="margin-top:200px;"><a style="text-align: center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href="../index.html">Volver al Indice</a></footer>
+
+
+  </body>
+</html>
