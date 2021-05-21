@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ES" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Variable de tipo objeto de dato</title>
+
+    <style media="screen">
+      html , body {
+        width:100%;
+        height:100%;
+        margin:0%;
+        padding:0%;
+      }
+
+      .fondo{
+        height:210px;
+        width:95%;
+        background-color:lightblue;
+        padding:0%;
+        margin:auto;
+        }
+      .control{
+        height:60px;
+        width:95%;
+        background-color:lightyellow;
+        padding:0%;
+        margin:auto;
+      }
+      p{font-size: 16px; font-weight:bold;}
+
+    </style>
+  </head>
+  <body>
+    <h1>Consignas del ejercicio</h1>
+    <p>Declarar y hacer uso de objetos de dato (datos de tipo objeto) <br>
+    Cargar de 2 personas a un array por programa <br>
+    Dejar de usar la función prompt() para el ingreso de datos. Armar un contenedor para el ingreso de datos desde consola (solo inputs sin formulario) <br>
+    Dejar de usar document.write() y escribir contenido dentro de un elemento html (puede ser un div) <br>
+    Dos botones para llamar a dos funciones. Una para cargar un nuevo objeto de dato por teclado y otra para mostrar en formato de tabla el array completo de elmentos con su longitud <br>
+    Un tercer procedimiento para ocultar el elemento de presentación (usando el parámetro de estilo display:none)</p>
+
+    <div class="fondo">
+      <h2>Adicionar Persona</h2>
+      <label for="nombre">Nombre:</label><br>
+      <input type="text" id="nombre" value=""><br>
+
+      <label for="apellido">Apellido:</label><br>
+      <input type="text" id="apellido" value=""><br>
+
+      <label for="fecha">Fecha de Nacimiento:</label><br>
+      <input type="date" id="fecha" value=""><br>
+      <br>
+      <button type="button" id="crea">Crea Persona</button>
+    </div> <br>
+
+    <div class="control">
+      <h3>Control</h3>
+      <button type="button" style="padding:1px;margin:0%;" id="mostrar">Lista Personas</button>
+      <button type="button" style="padding:1px;margin:0%;" id="ocultar">Oculta Presentación</button>
+    </div>
+
+    <div class="cont"> </div>
+
+    <script type="text/javascript">
+      var objetoPersona = { nombre:"Leonardo", apellido:"Abalsamo", fecha:"21/5/1990" };
+      var arregloPersona = [objetoPersona];
+      var objetoPersona = { Persona : arregloPersona };
+
+      document.getElementById("crea").onclick= function() {
+        arregloPersona.push({nombre:document.getElementById('nombre').value, apellido:document.getElementById('apellido').value , fecha:document.getElementById('fecha').value});
+        document.getElementById('nombre') = "";
+        document.getElementById('apellido') = "";
+        document.getElementById('fecha') = "";
+      }
+
+      document.getElementById("mostrar").onclick= function() {
+        while(document.getElementById("cont").childNodes.length>0) {
+        document.getElementById("cont").removeChild(document.getElementById("cont").childNodes[0]);}
+      }
+      document.getElementById("ocultar").onclick= function() {
+        while(document.getElementById("cont").childNodes.length>0) {
+        document.getElementById("cont").removeChild(document.getElementById("cont").childNodes[0]);}
+      }
+
+
+    </script>
+    <footer style="margin-top:200px;"><a style="text-align: center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href="../index.html">Volver al Indice</a></footer>
+
+  </body>
+</html>

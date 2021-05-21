@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  <style media="screen">
+
+    html , body {
+      width:100%;
+      height:100%;
+      margin:0%;
+      padding:0%;
+      overflow:auto;
+    }
+
+    .fondo1{
+      top:25%;
+      left:25%;
+      height:30%;
+      width:20%;
+      background-color:grey;
+      margin:0%;
+      color:white;
+      border:solid;
+      border-color:black;
+      }
+
+      .fondo2{
+        top:25%;
+        left:25%;
+        height:30%;
+        width:20%;
+        background-color:darkblue;
+        margin:0%;
+        color:white;
+        border:solid;
+        border-color:grey;
+        }
+        .fondo2 h2{
+          text-align:center;
+          color:grey;
+        }
+
+        .fondo3{
+          top:25%;
+          left:25%;
+          height:30%;
+          width:20%;
+          background-color:yellow;
+          margin:0%;
+          color:black;
+          border:solid;
+          border-color:darkgrey;
+          }
+          .fondo3 h2{
+            text-align:right;
+            color:grey;
+          }
+          .fondo3 ul {
+            font-weight:bold;
+            font-size:26px;
+          }
+
+
+          .fondo4{
+            top:25%;
+            left:25%;
+            height:30%;
+            width:20%;
+            background-color:black;
+            margin:0%;
+            color:white;
+            border:solid;
+            border-color:yellow;
+            }
+
+    button{
+      margin-top:5%;
+      height:20px;
+      width:100px;
+
+    }
+  </style>
+  </head>
+  <body>
+    <h1>Ejemplos de cambios de estilo dinamicamente</h1>
+<div id="lista">
+  <h2>Lista con estilo</h2>
+  <ul>
+    <li>Texto 1</li>
+    <li>Texto 2</li>
+    <li>Texto 3</li>
+  </ul>
+</div>
+
+<button type="button" id="tipo1">TIPO 1</button>
+<button type="button" id="tipo2">TIPO 2</button>
+<button type="button" id="tipo3">TIPO 3</button>
+<button type="button" id="tipo4">TIPO 4</button>
+
+
+
+  <script type="text/javascript">
+
+document.getElementById("tipo1").onclick= function() {
+    document.getElementById('lista').className="fondo1";}
+
+document.getElementById("tipo2").onclick= function() {
+    document.getElementById('lista').className="fondo2";}
+
+document.getElementById("tipo3").onclick= function() {
+    document.getElementById('lista').className="fondo3";}
+
+document.getElementById("tipo4").onclick= function() {
+    document.getElementById('lista').className="fondo4";}
+
+  </script>
+  <footer style="margin-top:200px;"><a style="text-align: center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href="../index.html">Volver al Indice</a></footer>
+
+  </body>
+</html>
