@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario en Ventana Modal</title>
+    <link rel="stylesheet" href="./estiloesp10.css">
+  </head>
+  <body>
+    <div class="conta">
+      <h1>Empleados Empresa</h1>
+      <button style="margin-left:100px;" id="cargar">Cargar Datos</button>
+      <button id="vaciar">Vaciar Datos</button>
+    </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th campo-dato="ape">Apellido</th>
+            <th campo-dato="edad">Edad</th>
+            <th campo-dato="alta">Fecha de Alta</th>
+            <th campo-dato="puesto">Puesto</th>
+            <th campo-dato="area">Area</th>
+          </tr>
+        </thead>
+        <tbody id="bodytabla"></tbody>
+      </table>
+      <footer><h1></h1>Pie</footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="./basedatos.json" type="text/javascript"></script>
+    <script src="./esp10.js" type="text/javascript"></script>
+
+
+
+  </body>
+</html>
+
+
+<!--
+
+comercial administracion ingenieria
+
+<link href="./estilo.css" rel="stylesheet" type="text/css">
+
+-->

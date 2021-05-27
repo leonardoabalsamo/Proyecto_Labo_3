@@ -1,0 +1,41 @@
+
+
+html , body{ height: 100% ;  width: 100%;  margin:0%; }
+
+header { height:10%; background-color: lightgrey; width: 100%; }
+
+.contform{ height: 80%; width: 100%; background-color: lightblue; margin:auto; box-sizing: border-box; padding:0%;display: flex;}
+
+.contform form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 50px;
+   padding-left: 60px;
+  }
+
+.interno{ height: 75px; max-height: 100%;
+width:30%; max-width: 100%; }
+
+footer{ height:10%; background-color: lightgrey; width: 100%; margin:0%;; padding: 0%; box-sizing: border-box;}
+
+input , select{ height: 25px; margin-left: 10px; font-size:14px; box-sizing: border-box;}
+label{ margin-left: 10px;font-size:14px; font-weight: bold;}
+button { height: 30px; width: 150px; border:solid; border-color: black; background-color: lightgrey; font-size: 14px;}
+h1{ margin:0px; padding:0px; text-align: center;}
+
+#btnmdl{cursor: pointer; max-width: 20%; max-height: 15%; font-size: 18px;}
+
+
+#contenedor{ width:100%;height: 100%; background-color: lightblue;}
+#contenedor.cdesactiva{ opacity: 0.3; pointer-events: none; }
+#cerrar{ background-color: red; color: black; font-size: 18px; float:right; height: 25px; width: 25px;}
+
+
+#modal.cactiva{ opacity: 1; pointer-events: auto; visibility: visible;}
+#modal{ position: fixed; top: 30%; left: 25%; border:solid; visibility: hidden; max-width: 50%; max-height: 50%; width: 50%; height: 50%;}
+#modal.mactiva{ visibility: visible;}
+#modal.mdesactiva{ visibility: hidden;}

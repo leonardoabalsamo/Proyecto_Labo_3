@@ -1,0 +1,27 @@
+
+html , body{ height: 100% ; max-height: 100%; width: 100%; max-width: 100%; margin:0%; }
+
+header { height:10%; background-color: lightgrey; width: 100%; }
+
+.contform{ height: 80%; width: 100%; background-color: lightblue; margin:auto; box-sizing: border-box; padding:0%;}
+
+.contform form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding-top: 100px;
+   padding-left: 120px;
+  }
+
+.interno{ height: 150px; max-height: 100%;
+width:30%; max-width: 100%; }
+
+footer{ height:10%; background-color: lightgrey; width: 100%; margin:0%;; padding: 0%; box-sizing: border-box;}
+
+input , select{ height: 50px; margin-left: 20px; font-size:28px; box-sizing: border-box;}
+label{ margin-left: 20px;font-size:28px; font-weight: bold;}
+button { height: 60px; width: 300px; border:solid; border-color: black; background-color: lightgrey; font-size: 28px;}
+h1{ margin:0px; padding:0px; text-align: center;}
