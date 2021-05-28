@@ -7,12 +7,12 @@ lista.Persona.forEach(function(valor,indice){
     document.getElementById("area").appendChild(opcion);
 });
 
-$("#btnmdl").click(function()){
+$("#btnmdl").click(function(){
   document.getElementById('contenedor').className="cdesactiva";
   document.getElementById('modal').className="mactiva";
 });
 
-$("#cerrar").click(function()){
+$("#cerrar").click(function(){
   document.getElementById('modal').className='mdesactiva';
   document.getElementById('contenedor').className='cactiva';
 });

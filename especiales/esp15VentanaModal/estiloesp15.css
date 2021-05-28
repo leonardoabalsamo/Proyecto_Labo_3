@@ -1,10 +1,10 @@
 
+html , body{ height: 100% ; height: 100%; margin:0%; padding:0%; }
 
-html , body{ height: 100% ;  width: 100%;  margin:0%; }
+.conta , footer{ height:10%; background-color: lightblue; width: 100%; text-align:center; display:flex;}
 
-header { height:10%; background-color: lightgrey; width: 100%; }
 
-.contform{ height: 80%; width: 100%; background-color: lightblue; margin:auto; box-sizing: border-box; padding:0%;display: flex;}
+.contform{ height: 80%; width: 100%; background-color: lightblue; margin:auto; box-sizing: border-box; padding-top:9%;}
 
 .contform form{
   display: flex;
@@ -13,20 +13,20 @@ header { height:10%; background-color: lightgrey; width: 100%; }
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  padding-top: 50px;
-   padding-left: 60px;
   }
 
-.interno{ height: 75px; max-height: 100%;
-width:30%; max-width: 100%; }
+.interno{ height: 95px; max-height: 100%; width:30%; max-width: 100%;}
 
-footer{ height:10%; background-color: lightgrey; width: 100%; margin:0%;; padding: 0%; box-sizing: border-box;}
+.fin{ height:10%; background-color: lightgrey; width: 100%; margin:0%;; padding: 0%; box-sizing: border-box;}
+footer{ height:8%; background-color: lightgrey; width: 100%; margin:0%;; padding-left: 40%; box-sizing: border-box;}
 
 input , select{ height: 25px; margin-left: 10px; font-size:14px; box-sizing: border-box;}
 label{ margin-left: 10px;font-size:14px; font-weight: bold;}
-h1{ margin:0px; padding:0px; text-align: center;}
+button { height: 63px; width: 150px; border:solid; border-width: thin;border-color: black; background-color: lightgrey; font-size: 14px;}
 
-#btnmdl{cursor: pointer; max-width: 20%; max-height: 15%; font-size: 18px;}
+h1{ margin:0px; padding:0px; text-align: center;}
+h2{ margin:0px; padding:0px; text-align: center;}
+
 
 
 #contenedor{ width:100%;height: 100%; background-color: lightblue;}
