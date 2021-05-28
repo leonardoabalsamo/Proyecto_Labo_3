@@ -24,7 +24,6 @@ footer{ height:10%; background-color: lightgrey; width: 100%; margin:0%;; paddin
 
 input , select{ height: 25px; margin-left: 10px; font-size:14px; box-sizing: border-box;}
 label{ margin-left: 10px;font-size:14px; font-weight: bold;}
-button { height: 30px; width: 150px; border:solid; border-color: black; background-color: lightgrey; font-size: 14px;}
 h1{ margin:0px; padding:0px; text-align: center;}
 
 #btnmdl{cursor: pointer; max-width: 20%; max-height: 15%; font-size: 18px;}

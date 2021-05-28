@@ -2,11 +2,85 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Tabla y Formulario</title>
+    <link rel="stylesheet" href="./estiloesp20.css">
   </head>
   <body>
-    <script type="text/javascript">
 
-    </script>
+    <div id="contenedor">
+
+      <div class="conta">
+        <h1>Empleados Empresa</h1>
+        <button style="margin-left:600px;" id="cargaemp">Cargar Empleado</button>
+        <button style="margin-left:10px;" id="cargar">Cargar Datos</button>
+        <button style="margin-left:10px;" id="vaciar">Vaciar Datos</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th campo-dato="ape">Apellido</th>
+            <th campo-dato="edad">Edad</th>
+            <th campo-dato="alta">Fecha de Alta</th>
+            <th campo-dato="puesto">Puesto</th>
+            <th campo-dato="area">Area</th>
+          </tr>
+        </thead>
+        <tbody id="bodytabla"></tbody>
+      </table>
+      <div class="fin"><h1>Pie</h1><a style="text-align: center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href="../index.html">Volver al Indice</a></div>
+    </div>
+
+
+    <div id="modal">
+    <header><h1>Formulario para Alta - Empleados Empresa</h1> </header>
+
+    <div class="contform">
+      <form class="" action="respuesta.html" method="get">
+
+        <div class="interno">
+          <label for="apellido">Apellido:</label><br>
+          <input type="text" name="apellido" id="ape" required ><br>
+        </div>
+        <div class="interno">
+          <label for="edad">Edad:</label><br>
+          <input type="text" name="edad" id="edad" required><br>
+        </div>
+        <div class="interno">
+          <label for="alta">Fecha de Alta:</label><br>
+          <input type="date" name="alta" id="alta" required><br>
+        </div>
+        <div class="interno">
+          <label for="puesto">Puesto:</label><br>
+          <input type="text" name="puesto" id="puesto" required><br>
+        </div>
+        <div class="interno">
+          <label for="area">Area:</label><br>
+          <select id="area" name="area" ><br>
+        </div>
+        <div class="interno">
+          <input type="submit" name="" id="enviar" value="Enviar">
+        </div>
+      </form>
+
+    </div>
+    <footer><h2>Pie del formulario</h2></footer>
+
+  </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="./basedatos.json" type="text/javascript"></script>
+    <script src="./esp20.js" type="text/javascript"></script>
+
+
+
   </body>
 </html>
+
+
+<!--
+
+comercial administracion ingenieria
+
+<link href="./estilo.css" rel="stylesheet" type="text/css">
+
+-->
