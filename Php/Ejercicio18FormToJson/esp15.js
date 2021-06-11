@@ -10,10 +10,6 @@ $("#cerrar").click(function(){
 
 
 $("#enviar").click(function(){
-
-    var confirma = confirm('Â¿Esta seguro que desea enviar los datos?');
-
-    if (confirma) {
         $("#Resultado").empty();
         $("#Resultado").addClass("estiloRecibiendo");
         $("#Resultado").html("<h2 style='margin-left: 20px; margin-top: 5px; color: darkblue;'>Esperando Respuesta ...</h2>");
@@ -23,19 +19,15 @@ $("#enviar").click(function(){
             url:"./respuesta.php",
             data:
             {
-                id: $("#usuario").val(),
+                usuario: $("#usuario").val(),
                 login: $("#login").val(),
                 apellido: $("#apellido").val(),
-                nombres: $("#nombre").val(),
-                fechaNac: $("#edad").val(),
+                nombre: $("#nombre").val(),
+                edad: $("#edad").val(),
             },
             success: function(respuestaDelServer,estado) {
                 $("#Resultado").removeClass("estiloRecibiendo");
-                $("#Resultado").html("<h2 style='margin-left: 20px; margin-top: 5px; color: darkblue;'>Resultado de la transformacion a JSON en el servidor: </h2><h4 style='margin-top: 12px; margin-left:10px;'>" + respuestaDelServer + "</h4>");
+                $("#Resultado").html("<h2>JSON en el servidor: </h2><h4>" + respuestaDelServer + "</h4>");
             }
         });
-    }else{
-        return false;
-    }
-
 });

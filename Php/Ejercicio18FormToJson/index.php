@@ -2,7 +2,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Formulario en Ventana Modal</title>
+    <title>Ejercicio18FormToJson</title>
     <link rel="stylesheet" href="./estiloesp15.css">
   </head>
 
@@ -11,7 +11,9 @@
   <div id="contenedor">
     <h1>Ventana Modal</h1>
       <button style="margin-left:100px;" id="btnmdl">Abre DIV modal</button>
-
+      <div class="fin">
+        <br><a href="../index.html">Volver al Indice</a>
+      </div>
   </div>
 
   <div id="modal">
