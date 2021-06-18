@@ -3,10 +3,10 @@
 
     sleep(1);
     /*Vinculación con la BD del servidor // Conexión */
-    define("SERVER","localhost");
-    define("USUARIO","root");
-    define("PASS","");
-    define("BASE","empleados");
+    define("SERVER","b1wxrcvtq9n5vzkulrp3-mysql.services.clever-cloud.com");
+    define("USUARIO","uumcnhlukgml0fs3");
+    define("PASS","R87rmtX6idkwQIDZeisO");
+    define("BASE","b1wxrcvtq9n5vzkulrp3");
 
     $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexión con la BD
     $orden =$_GET['orden'];
