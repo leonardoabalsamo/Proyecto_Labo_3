@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
     $("#orden").val("apellido");
     $("#codigo" ).click(function() {
@@ -51,16 +49,15 @@ function cargaTabla(){
               url:"./basedatos.php",
               data: {
                       orden: $("#orden").val(),
-                      inputcodigo: $("#inputcodigo").val(),
-                      inputapellido: $("#inputapellido").val(),
-                      inputedad: $("#inputedad").val(),
-                      inputalta: $("#inputalta").val(),
-                      inputpuesto: $("#inputpuesto").val(),
-                      inputarea: $("#inputarea").val()
+                      inputCodigo: $("#inputCodigo").val(),
+                      inputApellido: $("#inputApellido").val(),
+                      inputEdad: $("#inputEdad").val(),
+                      inputAlta: $("#inputAlta").val(),
+                      inputPuesto: $("#inputPuesto").val(),
+                      inputArea: $("#inputArea").val(),
 
                     }, // El cliente pide los datos
               success: function(respuestaDelServer,estado) {
-                          console.log(respuestaDelServer);
                           $("#bodytabla").empty();
                           objJson=JSON.parse(respuestaDelServer);
                           console.log(objJson);

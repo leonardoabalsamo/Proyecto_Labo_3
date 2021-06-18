@@ -1,6 +1,4 @@
 <?php
-
-
     sleep(1);
     /*Vinculación con la BD del servidor // Conexión */
     define("SERVER","localhost");
@@ -10,7 +8,7 @@
 
     $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexión con la BD
 
-/*
+
     if ($mysqli->connect_errno<>0) {
         $puntero = fopen("./errores.log","a");
         fwrite($puntero, "Fallo conexion base de datos: ");
@@ -20,21 +18,23 @@
         fwrite($puntero, "\n");
         fclose($puntero);
         die();
-      }  */
+      }
+
     //objeto orden que trae el orden desde el ajax
     $orden =$_GET['orden'];
 
     //objetos que traen los ingresos desde el ajax
-    $codigo =$_GET['inputcodigo'];
-    $apellido =$_GET['inputapellido'];
-    $edad =$_GET['inputedad'];
-    $alta =$_GET['inputalta'];
-    $puesto =$_GET['inputpuesto'];
-    $area =$_GET['inputarea'];
+    $inputCodigo =$_GET['inputCodigo'];
+    $inputApellido =$_GET['inputApellido'];
+    $inputEdad =$_GET['inputEdad'];
+    $inputAlta =$_GET['inputAlta'];
+    $inputPuesto =$_GET['inputPuesto'];
+    $inputArea =$_GET['inputArea'];
 
     /**************************************************************************************************************************************************************************************/
-    //$sql="select * from persona order by " . $orden; // Seleccionamos la BD según el orden enviado en el objeto $orden
 
+    $resultado;
+    $respuesta;
 
     $sql="select * from persona where ";
     $sql=$sql . "codigo LIKE ? and ";
@@ -46,11 +46,41 @@
     $sql =$sql . " order by " . $orden;
 
 
-    if (!( $resultado = $mysqli->query($sql))) { //Devuelve un objeto $resultado que si es Null cierra la conexión con la BD
+  /*if (!( $resultado = $mysqli->query($sql))) { //Devuelve un objeto $resultado que si es Null cierra la conexión con la BD
         die();
-        }
+      }*/
 
-    $resultadoCuentaPersonas = $resultado->num_rows; // Almacenamos el nro de Filas en la variable $resultadoCuentaRegistros
+
+    if ( !($sentencia = $mysqli->prepare($sql)) ) {
+            $respuesta = $respuesta . "<br/>Falló la preparación del template: (" . $mysqli->errno . ") " . $mysqli->error;
+            }
+
+    else {
+            $likeVarcodigo ="%" . $inputCodigo . "%";
+            $likeVarapellido ="%" . $inputApellido . "%";
+            $likeVaredad ="%" . $inputEdad . "%";
+            $likeVaralta ="%" . $inputAlta . "%";
+            $likeVarpuesto ="%" . $inputPuesto . "%";
+            $likeVararea ="%" . $inputArea . "%";
+            }
+
+    if ( !$sentencia->bind_param('ssssss',$likeVarcodigo,$likeVarapellido,$likeVaredad,$likeVaralta,$likeVarpuesto,$likeVararea) ) {
+            $respuesta = $respuesta . "<br/>Falló la vinculación de parámetros simples: (" . $sentencia->errno . ") " . $sentencia->error;
+            }
+    else {
+            if ( !$sentencia->execute() ) {
+                $respuesta = $respuesta . "<br/>Falló la ejecución de parametros simples: (" . $sentencia->errno . ") " . $sentencia->error;
+                die();
+                }
+          else {
+                  $respuesta = $respuesta . "<br/>Datos obtenidos!";
+                  $resultado = $sentencia->get_result();
+                }
+    }
+
+
+
+    //$resultadoCuentaPersonas = $resultado->num_rows; // Almacenamos el nro de Filas en la variable $resultadoCuentaRegistros
 
     $personas=[]; // Creamos un array de personas para almacenar los datos de las filas correspondientes
 
