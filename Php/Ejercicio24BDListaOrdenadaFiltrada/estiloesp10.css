@@ -1,0 +1,52 @@
+
+html , body{ height: 100% ; height: 100%; margin:0%; padding:0%; }
+
+.conta { height:10%; background-color: lightblue; width: 100%; text-align:center; display:flex;}
+#orden{ width: 200px; height: 30px; margin-top: 20px; margin-left: 20px;}
+input { width: 150px; height: 30px; margin-top: 20px; margin:0px;}
+
+
+footer{ height:10%; background-color: lightblue; width: 100%; display: flex;}
+
+h1 {padding:0%;margin-left: 40%;text-align: center;}
+h2 {padding:0%;margin:0%;text-align: center;}
+
+table {width: 100%;height: 80%; max-width: 100%; max-height: 80%; border:solid; display:block;}
+
+table thead{  display: block;  width: 100%; }
+
+thead [campo-dato="codigo"], thead [campo-dato="apellido"], thead [campo-dato="edad"], thead [campo-dato="alta"], thead [campo-dato="puesto"], thead [campo-dato="area"] {
+        width: 251px;
+        height: 7%;
+        border-style: solid;
+        border-color: black;
+        border-width: 4px;
+        background-color: lightblue;
+        font-size: 35px;
+        font-weight: bold;
+        color: black;
+        box-sizing: border-box;
+        padding: 10px;
+}
+
+table tbody{
+    display: block;
+    width: 100%;
+    height: 88%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+
+table tbody tr:nth-child(odd){background-color: lightgrey;}
+
+tbody [campo-dato="codigo"],tbody [campo-dato="apellido"],tbody [campo-dato="edad"],tbody [campo-dato="alta"],tbody [campo-dato="puesto"],tbody [campo-dato="area"] {
+      width: 300px;
+      height: 35px;
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin-left: 100px;
+
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 20 BD Lista</title>
+    <link rel="stylesheet" href="./estiloesp10.css">
+  </head>
+
+  <body>
+    <div class="conta">
+      <h1>Empleados Empresa</h1>
+      <input readonly type="text"id="orden">
+      <button style="margin-left:100px;" id="cargar">Cargar Datos</button>
+      <button id="vaciar">Vaciar Datos</button>
+    </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th campo-dato="codigo" id="codigo">Codigo</th>
+            <th campo-dato="apellido" id="apellido">Apellido</th>
+            <th campo-dato="edad" id="edad">Edad</th>
+            <th campo-dato="alta" id="alta">Fecha de Alta</th>
+            <th campo-dato="puesto" id="puesto">Puesto</th>
+            <th campo-dato="area" id="area">Area</th>
+          </tr>
+          <tr>
+            <th campo-dato="codigo"><input type="text" id="inputcodigo"></th>
+            <th campo-dato="apellido"><input type="text" id="inputapellido"></th>
+            <th campo-dato="edad"><input type="text" id="inputedad"></th>
+            <th campo-dato="alta"><input type="text" id="inputalta"></th>
+            <th campo-dato="puesto"><input type="text" id="inputpuesto"></th>
+            <th campo-dato="area"><input type="text" id="inputarea"></th>
+          </tr>
+        </thead>
+        <tbody id="bodytabla"></tbody>
+
+      </table>
+      <footer><div id="totalRegistros"></div><a style="position:absolute;margin-left: 300px; text-align:center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href="../index.html">Volver al Indice</a></footer>
+
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <script src="./esp10.js" type="text/javascript"></script>
+  </body>
+</html>
+
+
+<!--
+
+comercial administracion ingenieria
+
+<link href="./estilo.css" rel="stylesheet" type="text/css">
+
+-->
