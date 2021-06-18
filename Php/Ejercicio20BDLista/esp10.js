@@ -8,7 +8,7 @@ $("#cargar").click(function(){
 
         var objAjax = $.ajax({
               type:"get",
-              url:"1wxrcvtq9n5vzkulrp3-mysql.services.clever-cloud.com",
+              url:"./basedatos.php",
               data: { }, // El cliente pide los datos
               success: function(respuestaDelServer,estado) {
                           $("#bodytabla").empty();
