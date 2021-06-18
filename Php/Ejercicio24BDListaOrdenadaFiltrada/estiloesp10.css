@@ -32,7 +32,7 @@ thead [campo-dato="codigo"], thead [campo-dato="apellido"], thead [campo-dato="e
 table tbody{
     display: block;
     width: 100%;
-    height: 88%;
+    height: 75%;
     overflow-y: scroll;
     overflow-x: hidden;
 }

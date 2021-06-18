@@ -4,46 +4,35 @@ $(document).ready(function() {
     $("#orden").val("codigo");
     cargaTabla();
     }); //cierro click()
-
     $("#apellido" ).click(function() {
     $("#orden").val("apellido");
     cargaTabla();
     });
-
     $("#edad" ).click(function() {
     $("#orden").val("edad");
     cargaTabla();
     });
-
     $("#alta" ).click(function() {
     $("#orden").val("alta");
     cargaTabla();
     });
-
     $("#puesto" ).click(function() {
     $("#orden").val("puesto");
     cargaTabla();
     });
-
     $("#area" ).click(function() {
     $("#orden").val("area");
     cargaTabla();
     });
 }); //cierro ready
 
-$("#cargar").click(function(){
-    cargaTabla();
-});
+$("#cargar").click(function(){ cargaTabla(); });
 
-$("#vaciar").click(function(){
-    $("#bodytabla").empty();
-    $("#totalRegistros").empty();
-});
+$("#vaciar").click(function(){ $("#bodytabla").empty(); $("#totalRegistros").empty(); });
 
 function cargaTabla(){
         $("#bodytabla").empty();
         $("#bodytabla").html("<h3>Esperando respuesta..</h3>");
-
         var objAjax = $.ajax({
               type:"get",
               url:"./basedatos.php",
@@ -55,16 +44,13 @@ function cargaTabla(){
                       inputAlta: $("#inputAlta").val(),
                       inputPuesto: $("#inputPuesto").val(),
                       inputArea: $("#inputArea").val(),
-
                     }, // El cliente pide los datos
               success: function(respuestaDelServer,estado) {
                           $("#bodytabla").empty();
                           objJson=JSON.parse(respuestaDelServer);
                           console.log(objJson);
                           objJson.personas.forEach(function(valor,indice) {
-
                                       var fila = document.createElement("tr"); // Genero una fila
-
                                       var codigo = document.createElement("td"); // Genero la celda
                                       codigo.setAttribute("campo-dato", "codigo"); // CSS
                                       codigo.innerHTML = valor.codigo; //
@@ -94,11 +80,9 @@ function cargaTabla(){
                                       area.setAttribute("campo-dato", "area");
                                       area.innerHTML = valor.area;
                                       fila.appendChild(area);
-
                                       document.getElementById("bodytabla").appendChild(fila);
                         });
                         $("#totalRegistros").html("Nro de registros: " + objJson.cuenta);
                       }
-
                   });
 }
