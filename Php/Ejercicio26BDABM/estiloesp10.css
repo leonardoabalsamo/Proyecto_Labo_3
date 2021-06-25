@@ -2,6 +2,8 @@
 html , body{ height: 100% ; height: 100%; margin:0%; padding:0%; }
 
 #contenedor { height:10%; background-color: lightblue; width: 100%; text-align:center; display:flex;}
+#contenedorModal { height:100%; width: 100%; text-align:center; display:block;}
+
 #orden{ width: 200px; height: 30px; margin-top: 20px; margin-left: 20px;}
 input { width: 150px; height: 30px; margin-top: 20px; margin:0px;}
 

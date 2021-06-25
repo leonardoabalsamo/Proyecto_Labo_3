@@ -2,10 +2,11 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Ejercicio 20 BD Lista</title>
+    <title>Ejercicio 26 ABM</title>
     <link rel="stylesheet" href="./estiloesp10.css">
   </head>
   <body>
+    <div id="contenedorModal">
 
     <div id="contenedor">
       <h1>Empleados Empresa</h1>
@@ -14,7 +15,6 @@
       <button id="vaciar">Vaciar Datos</button>
       <button id="btnalta">Alta Registro</button>
     </div>
-
       <table id="tabla">
         <thead>
           <tr>
@@ -41,9 +41,9 @@
           </tr>
         </thead>
         <tbody id="bodytabla"></tbody>
-
       </table>
       <footer><div id="totalRegistros"></div><a style="position:absolute;margin-left: 300px; text-align:center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href="../index.html">Volver al Indice</a></footer>
+    </div>
 
       <div id="modalAlta">
                         <header class="headermodal">
@@ -83,9 +83,7 @@
                         <div class="interno">
                           <input type="submit" name="" id="EnviarAlta">
                         </div></form>
-
                       </div>
-
       </div>
 
       <div id="modalModi">
@@ -110,7 +108,6 @@
                           <label for="alta">Fecha de Alta:</label><br>
                           <input type="date" name="alta" id="altaModi" required><br>
                         </div>
-
                         <div class="interno">
                           <label for="puesto">Puesto:</label>
                           <input type="text" name="puesto" id="puestoModi" required><br>

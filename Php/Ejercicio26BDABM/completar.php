@@ -1,15 +1,17 @@
 <?php
-      define("SERVER","localhost");
-      define("USUARIO","root");
-      define("PASS","");
-      define("BASE","empleados");
-    $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexión con la BD
+define("SERVER","b1wxrcvtq9n5vzkulrp3-mysql.services.clever-cloud.com");
+define("USUARIO","uumcnhlukgml0fs3");
+define("PASS","R87rmtX6idkwQIDZeisO");
+define("BASE","b1wxrcvtq9n5vzkulrp3");
+$mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexión con la BD
 
 
     $inputCodigo =$_GET['inputCodigo'];
 
 
     $sql="select * from persona order by " . $inputCodigo;
+
+    $resultado="";
 
     if (!( $resultado = $mysqli->query($sql))) { //Devuelve un objeto $resultado que si es Null cierra la conexión con la BD
         die();
@@ -36,5 +38,4 @@
   $objPersonas->cuenta=$resultadoCuentaPersonas;
   $salidaJson = json_encode($objPersonas); // Genera un Json que incluye los registros + la cantidad de registros.
   $mysqli->close();
-  echo $salidaJson;
 ?>

@@ -52,10 +52,12 @@ $(document).ready(function() {
     });
 
     $("#EnviarModi").click(function() {
-      funcionModi();});
+      funcionModi();
+      cargaTabla();});
 
     $("#EnviarAlta").click(function() {
-      funcionAlta();});
+      funcionAlta();
+      cargaTabla();});
 
     $("#codAlta").keyup(function() {
     todoListoParaAlta();
@@ -73,20 +75,19 @@ $("#vaciar").click(function(){ $("#bodytabla").empty(); $("#totalRegistros").emp
 
 // Muestro Modal de Altas
 $("#btnalta").click(function() {
-    $("#contenedor").addClass("cdesactiva");
-    $("#tabla").addClass("cdesactiva");
+    $("#contenedorModal").addClass("cdesactiva");
     $("#modalModi").css("visibility","hidden");
     $("#modalAlta").css("visibility","visible");
   });
 
 
 $("#botoncerrarAlta").click(function(){
-    $("#contenedor").addClass("activa");
+    $("#contenedorModal").addClass("activa");
     $("#modalAlta").css("visibility","hidden");
 });
 
 $("#botoncerrarModi").click(function(){
-    $("#contenedor").addClass("activa");
+    $("#contenedorModal").addClass("activa");
     $("#modalModi").css("visibility","hidden");
 });
 
@@ -160,9 +161,9 @@ function cargaTabla(){
                                       fila.appendChild(btnmodi);
 
                                       btnmodi.onclick=function() {
-                                          $("#contenedor").addClass("cdesactiva");
-                                          $("#modalModi").css("visibility","visible");
+                                          $("#contenedorModal").addClass("cdesactiva");
                                           $("#modalAlta").css("visibility","hidden");
+                                          $("#modalModi").css("visibility","visible");
                                           completarModi(valor.codigo);
                                           };
 
@@ -171,13 +172,19 @@ function cargaTabla(){
                                       btnborrar.innerHTML="<button class='btnBD'>Borrar</button>";
                                       fila.appendChild(btnborrar);
 
+                                      btnborrar.onclick=function() {
+                                          $("#contenedorModal").addClass("activa");
+                                          $("#modalAlta").css("visibility","hidden");
+                                          $("#modalModi").css("visibility","hidden");
+                                          funcionBorrar(valor.codigo);
+                                          cargaTabla();
+                                          };
                                       document.getElementById("bodytabla").appendChild(fila);
                         });
                         $("#totalRegistros").html("Nro de registros: " + objJson.cuenta);
                       }
                   });
 }
-
 
 function completarModi(valor){
     var codigoP = valor;
@@ -187,17 +194,25 @@ function completarModi(valor){
         data: {inputCodigo: codigoP},
         success: function(respuestaDelServer,estado) {
               ojbJson = JSON.parse(respuestaDelServer);
-                $("#codModi").val(ojbJson.codigo),
-                $("#apeModi").val(ojbJson.apellido),
-                $("#edadModi").val(ojbJson.edad),
-                $("#altaModi").val(ojbJson.alta),
-                $("#puestoModi").val(ojbJson.puesto),
-                $("#areaModi").val(ojbJson.area)
+                $("#codModi").val(ojbJson.codigo);
+                $("#apeModi").val(ojbJson.apellido);
+                $("#edadModi").val(ojbJson.edad);
+                $("#altaModi").val(ojbJson.alta);
+                $("#puestoModi").val(ojbJson.puesto);
+                $("#areaModi").val(ojbJson.area);
               }
     });
 }
 
-
+function funcionBorrar(valor){
+    var codigoP = valor;
+    var objAjax = $.ajax({
+        type:"get",
+        url:"./BDBaja.php",
+        data: {inputCodigo: codigoP},
+        success: function(respuestaDelServer,estado) { }
+    });
+}
 
 function todoListoParaAlta() {
     if ((objCodAlta.checkValidity() == true)&&(objApeAlta.checkValidity()== true)&&(objEdadAlta.checkValidity()== true)
@@ -205,8 +220,6 @@ function todoListoParaAlta() {
       $("#EnviarAlta").attr("disabled",false);
     } else {  $("#EnviarAlta").attr("disabled",true); }
 }
-
-
 
 
 function todoListoParaModi() {
@@ -227,7 +240,7 @@ function funcionAlta(){
                 altaAlta: $("#altaAlta").val(),
                 puestoAlta: $("#puestoAlta").val(),
                 areaAlta: $("#areaAlta").val(),
-              }, // El cliente pide los datos
+              },
 });  }
 
 
