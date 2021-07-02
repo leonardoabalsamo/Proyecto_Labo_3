@@ -8,12 +8,15 @@
   </head>
   <body>
     <div class="contenedor">
-      <h1>Inicio de Sesión</h1>
-        <form class="" action="index.html" method="post">
-                <input type="text" name="usuario" id="usuario" required>
-                <input type="text" name="clave" id="clave" required>
-                <button type="submit" name="envia">Enviar</button>
-        </form>
+      <h1 style="border:solid;">Inicio de Sesión</h1><br>
+
+      <form method="post" action="ingresoalsistema.php" style="border:solid;">
+              <label for="usuario">Ingrese el usuario:</label><br>
+              <input type="text" name="usuario" placeholder="USUARIO:admin" required ><br>
+              <label for="password">Ingrese la clave:</label><br>
+              <input type="password" name="pass" placeholder="CONTRASEÑA:admin" required><br><br>
+              <input type="submit" name="submit" value="Entrar">
+      </form>
 
     </div>
   </body>
