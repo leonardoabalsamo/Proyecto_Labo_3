@@ -5,15 +5,14 @@ define("PASS","R87rmtX6idkwQIDZeisO");
 define("BASE","b1wxrcvtq9n5vzkulrp3");
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexión con la BD
 
+      $codAlta =$_POST['codigo'];
+      $apeAlta =$_POST['apellido'];
+      $edadAlta =$_POST['edad'];
+      $altaAlta =$_POST['alta'];
+      $puestoAlta =$_POST['puesto'];
+      $areaAlta =$_POST['area'];
 
-      $codAlta =$_GET['codAlta'];
-      $apeAlta =$_GET['apeALta'];
-      $edadAlta =$_GET['edadAlta'];
-      $altaAlta =$_GET['altaAlta'];
-      $puestoAlta =$_GET['puestoAlta'];
-      $areaAlta =$_GET['areaAlta'];
-
-      $sentencia = "insert into empleados (codAlta,apeAlta,edadAlta,altaAlta,puestoAlta,areaAlta) values (?,?,?,?,?,?)";
+      $sql = "insert into persona (codigo,apellido,edad,alta,puesto,area) values (?,?,?,?,?,?)";
 
       $respuesta = "";
       $resultado ="";

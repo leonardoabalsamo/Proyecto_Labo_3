@@ -5,7 +5,6 @@ define("PASS","R87rmtX6idkwQIDZeisO");
 define("BASE","b1wxrcvtq9n5vzkulrp3");
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexión con la BD
 
-    $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE);
 
     $sql = "select area from persona";
 
@@ -22,7 +21,7 @@ $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexió
     }
 
     $objAreas = new stdClass();
-    $objAreas->area = $areas;
+    $objAreas->areas = $areas;
 
     $salidaJson = json_encode($objAreas);
 

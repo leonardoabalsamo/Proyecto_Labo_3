@@ -82,3 +82,10 @@ div.activa{ opacity: 1; pointer-events: auto; }
 #modalServer{ opacity: 1; pointer-events: auto; visibility: visible; position: fixed; top: 30%; left: 25%; border:solid; margin:0%;padding:0%; max-width: 50%; max-height: 50%; width: 50%; height:300px;}
 
 #codAlta,#codModi, #apeAlta,#apeModi ,#edadAlta, #edadModi,  #puestoAlta, #puestoModi, #altaAlta, #altaModi,#areaAlta, #areaModi { width: 150px; height: 20px; margin-top:10px;}
+
+
+
+#modalServer{ margin:auto; width: 50%; height: 50%; padding:10px; background-color: grey; color:white;}
+#contServer{margin:auto; width:90%;height: 90%; padding:0%;}
+.activa{visibility: visible;}
+.desactiva{visibility: hidden;}

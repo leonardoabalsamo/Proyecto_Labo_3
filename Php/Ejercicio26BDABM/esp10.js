@@ -1,31 +1,17 @@
 $(document).ready(function() {
 
     objCodAlta=document.getElementById("#codAlta");
-    objApeAlta=document.getElementById("#apeAlta");
-    objEdadAlta=document.getElementById("#edadAlta");
-    objAltaAlta=document.getElementById("#altaAlta");
-    objPuestoAlta=document.getElementById("#puestoAlta");
-    objAreaAlta=document.getElementById("#areaAlta");
-    objArchivoAlta=document.getElementById("#btnArchivoAlta");
-
-
-    objCodModi=document.getElementById("#codModi");
-    objApeModi=document.getElementById("#apeModi");
-    objEdadModi=document.getElementById("#edadModi");
-    objAltaModi=document.getElementById("#altaModi");
-    objPuestoModi=document.getElementById("#puestoModi");
-    objAreaModi=document.getElementById("#areaModi");
-    objArchivoModi=document.getElementById("#btnArchivoModi");
-
+    $("#orden").val("apellido");
 
     $("#modalAlta").css("visibility","hidden");
     $("#modalModi").css("visibility","hidden");
     $("#modalServer").css("visibility","hidden");
+/*
+    $("#EnviarAlta").attr("disabled",false);
+    $("#EnviarModi").attr("disabled",false);
+*/
+    cargaTabla();
 
-    $("#EnviarAlta").attr("disabled",true);
-    $("#EnviarModi").attr("disabled",true);
-
-    $("#orden").val("apellido");
     $("#codigo" ).click(function() {
     $("#orden").val("codigo");
     cargaTabla();
@@ -58,14 +44,14 @@ $(document).ready(function() {
     $("#EnviarAlta").click(function() {
       funcionAlta();
       cargaTabla();});
-
+/*
     $("#codAlta").keyup(function() {
     todoListoParaAlta();
     });
 
     $("#codModi").keyup(function() {
     todoListoParaModi();
-    });
+  });*/
 
 }); //cierro ready
 
@@ -78,6 +64,7 @@ $("#btnalta").click(function() {
     $("#contenedorModal").addClass("cdesactiva");
     $("#modalModi").css("visibility","hidden");
     $("#modalAlta").css("visibility","visible");
+    completaArea();
   });
 
 
@@ -152,33 +139,35 @@ function cargaTabla(){
                                       var btnpdf = document.createElement("td");
                                       btnpdf.setAttribute("campo-dato","btnpdf");
                                       btnpdf.innerHTML="<button class='btnBD'>Pdf</button>";
+                                      btnpdf.onclick=function() {
+                                          $("#contenedorModal").addClass("cdesactiva");
+                                          $("#modalAlta").css("visibility","hidden");
+                                          $("#modalModi").css("visibility","hidden");
+                                          cargarPdf(valor.codigo);
+                                          };
                                       fila.appendChild(btnpdf);
 
 
                                       var btnmodi = document.createElement("td");
                                       btnmodi.setAttribute("campo-dato","btnmodi");
                                       btnmodi.innerHTML="<button class='btnBD'>Modificar</button>";
-                                      fila.appendChild(btnmodi);
-
                                       btnmodi.onclick=function() {
                                           $("#contenedorModal").addClass("cdesactiva");
                                           $("#modalAlta").css("visibility","hidden");
                                           $("#modalModi").css("visibility","visible");
                                           completarModi(valor.codigo);
+                                          completaArea();
                                           };
+                                      fila.appendChild(btnmodi);
 
                                       var btnborrar = document.createElement("td");
                                       btnborrar.setAttribute("campo-dato","btnborrar");
                                       btnborrar.innerHTML="<button class='btnBD'>Borrar</button>";
+                                      btnborrar.onclick=function() {
+                                          funcionBorrar(valor.codigo);
+                                          }
                                       fila.appendChild(btnborrar);
 
-                                      btnborrar.onclick=function() {
-                                          $("#contenedorModal").addClass("activa");
-                                          $("#modalAlta").css("visibility","hidden");
-                                          $("#modalModi").css("visibility","hidden");
-                                          funcionBorrar(valor.codigo);
-                                          cargaTabla();
-                                          };
                                       document.getElementById("bodytabla").appendChild(fila);
                         });
                         $("#totalRegistros").html("Nro de registros: " + objJson.cuenta);
@@ -187,36 +176,77 @@ function cargaTabla(){
 }
 
 function completarModi(valor){
-    var codigoP = valor;
     var objAjax = $.ajax({
         type:"get",
         url:"./completar.php",
-        data: {inputCodigo: codigoP},
+        data: {codigo: valor},
         success: function(respuestaDelServer,estado) {
+              console.log(respuestaDelServer);
               ojbJson = JSON.parse(respuestaDelServer);
-                $("#codModi").val(ojbJson.codigo);
-                $("#apeModi").val(ojbJson.apellido);
-                $("#edadModi").val(ojbJson.edad);
-                $("#altaModi").val(ojbJson.alta);
-                $("#puestoModi").val(ojbJson.puesto);
-                $("#areaModi").val(ojbJson.area);
+              ojbJson.personas.forEach(function(valor,indice){
+                  $("#codModi").val(valor.codigo);
+                  $("#apeModi").val(valor.apellido);
+                  $("#edadModi").val(valor.edad);
+                  $("#altaModi").val(valor.alta);
+                  $("#puestoModi").val(valor.puesto);
+                  $("#areaModi").val(valor.area);
+              })
               }
     });
 }
 
-function funcionBorrar(valor){
-    var codigoP = valor;
-    var objAjax = $.ajax({
+function completaArea(){
+    var objEquipos = $.ajax({
         type:"get",
-        url:"./BDBaja.php",
-        data: {inputCodigo: codigoP},
-        success: function(respuestaDelServer,estado) { }
+        url:"./listaAreas.php",
+        data: {},
+        success: function(respuestaDelServer,estado) {
+            console.log(respuestaDelServer);
+            ojbJsonAreas = JSON.parse(respuestaDelServer);
+            ojbJsonAreas.areas.forEach(function(valor,indice){
+                var objetoOpcion = document.createElement("option");
+                objetoOpcion.setAttribute("className", valor.area);
+                objetoOpcion.setAttribute("name", valor.area);
+                objetoOpcion.innerHTML = valor.area;
+                document.getElementById("areaModificacion").appendChild(objetoOpcion);
+                document.getElementById("areaAlta").appendChild(objetoOpcion);
+
+            })
+        }
     });
 }
 
+function funcionBorrar(valor){
+    var objAjax = $.ajax({
+        type:"post",
+        url:"./BDBaja.php",
+        data:
+        { codigo: valor } });
+    cargaTabla();
+}
+
+
+function cargarPdf(codigo){
+    var objAjax = $.ajax({
+        type:"get",
+        url:"./datosDoc.php",
+        data:
+        {
+            codigo: codigo
+        },
+        success: function(respuestaDelServer){
+            console.log(respuestaDelServer);
+            objPdf = JSON.parse(respuestaDelServer);
+            console.log(respuestaDelServer);
+            $("#modalServer").css("visibility","visible");
+            $("#contServer").empty();
+            $("#contServer").html("<iframe width='100%' height='300px' src='data:application/pdf;base64,"+objPdf.documentoPdf+"'></iframe>");
+        }
+    });
+}
+/*
 function todoListoParaAlta() {
-    if ((objCodAlta.checkValidity() == true)&&(objApeAlta.checkValidity()== true)&&(objEdadAlta.checkValidity()== true)
-    &&(objAltaAlta.checkValidity()== true)&&(objPuestoAlta.checkValidity()== true)&&(objAreaAlta.checkValidity()== true)){
+    /*if ((objCodAlta.checkValidity() == true)){
       $("#EnviarAlta").attr("disabled",false);
     } else {  $("#EnviarAlta").attr("disabled",true); }
 }
@@ -228,32 +258,30 @@ function todoListoParaModi() {
       $("#EnviarModi").attr("disabled",false);
     } else {  $("#EnviarModi").attr("disabled",true); }
 }
+*/
 
 function funcionAlta(){
+  var datos = new FormData($('#formalta')[0]);
   var objAjax = $.ajax({
-        type:"get",
+        type:"post",
+        method:"post",
         url:"./BDAlta.php",
-        data: { // datos que enviamos desde form Alta
-                codAlta: $("#codAlta").val(),
-                apeAlta: $("#apeAlta").val(),
-                edadAlta: $("#edadAlta").val(),
-                altaAlta: $("#altaAlta").val(),
-                puestoAlta: $("#puestoAlta").val(),
-                areaAlta: $("#areaAlta").val(),
-              },
-});  }
+        data: datos,
+        processData:false,
+        contentType:false,
+        cache:false
+}); cargaTabla(); }
+
 
 
 function funcionModi(){
+  var datos = new FormData($('#formModi')[0]);
   var objAjax = $.ajax({
-        type:"get",
-        url:"./BDModi.php",
-        data: { // datos que enviamos desde form Alta
-                codModi: $("#codModi").val(),
-                apeModi: $("#apeModi").val(),
-                edadModi: $("#edadModi").val(),
-                altaModi: $("#altaModi").val(),
-                puestoModi: $("#puestoModi").val(),
-                areaModi: $("#areaModi").val(),
-              }, // El cliente pide los datos
-});  }
+      type:"post",
+      method:"post",
+      url:"./BDModi.php",
+      data: datos,
+      processData:false,
+      contentType:false,
+      cache:false
+}); cargaTabla(); }

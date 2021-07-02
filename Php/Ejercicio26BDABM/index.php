@@ -46,10 +46,12 @@
     </div>
 
       <div id="modalAlta">
-                        <header class="headermodal">
-                          <h2>Formulario para Alta - Empleados Empresa</h2><button id="botoncerrarAlta">X</button>
-                        </header>
-                          <form id="formalta" method="post" enctype="multipart/form-data">
+              <header class="headermodal">
+                <h2>Formulario para Alta - Empleados Empresa</h2><button id="botoncerrarAlta">X</button>
+              </header>
+              <div class="contform">
+
+                <form id="formalta" method="post" enctype="multipart/form-data">
 
                         <div class="interno">
                           <label for="codigo">Codigo:</label><br>
@@ -61,7 +63,7 @@
                         </div>
                         <div class="interno">
                           <label for="edad">Edad:</label><br>
-                          <input type="text" name="apellido" id="edadAlta" required><br>
+                          <input type="text" name="edad" id="edadAlta" required><br>
                         </div>
                         <div class="interno">
                           <label for="alta">Fecha de Alta:</label><br>
@@ -73,7 +75,7 @@
                         </div>
                         <div class="interno">
                           <label for="area">Area:</label><br>
-                          <input id="areaAlta" name="areaAlta">
+                          <select name="area" id="areaAlta" required></select>
                         </div>
                         <div class="interno">
                           <label for="archivo">PDF:</label><br>
@@ -82,15 +84,17 @@
                         <div class="interno">
                           <input type="submit" name="" id="EnviarAlta">
                         </div>
-                      </div>
-      </div>
+                  </form>
+      </div></div>
 
       <div id="modalModi">
                         <header class="headermodal">
                           <h2>Formulario para Modi - Empleados Empresa</h2><button id="botoncerrarModi">X</button>
                         </header>
+
                         <div class="contform">
-                          <form id="formPost" method="post" enctype="multipart/form-data">
+                          <form id="formModi" method="post" enctype="multipart/form-data">
+
                         <div class="interno">
                           <label for="codigo">Codigo:</label><br>
                           <input type="text" name="codigo" id="codModi" required ><br>
@@ -101,7 +105,7 @@
                         </div>
                         <div class="interno">
                           <label for="edad">Edad:</label><br>
-                          <input type="text" name="apellido" id="edadModi" required><br>
+                          <input type="text" name="edad" id="edadModi" required><br>
                         </div>
                         <div class="interno">
                           <label for="alta">Fecha de Alta:</label><br>
@@ -113,7 +117,7 @@
                         </div>
                         <div class="interno">
                           <label for="area">Area:</label><br>
-                          <input id="area" name="areaModi">
+                          <select name="area" id="areaModificacion" required></select>
                         </div>
                         <div class="interno">
                           <label for="archivo">PDF:</label><br>
@@ -126,7 +130,9 @@
       </div>
 
       <div class="modalServer">
+        <div class="contServer">
 
+        </div>
       </div>
 
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>

@@ -6,18 +6,16 @@ define("BASE","b1wxrcvtq9n5vzkulrp3");
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexión con la BD
 
 
-    $inputCodigo =$_GET['inputCodigo'];
+    $codigo =$_GET['codigo'];
 
 
-    $sql="select * from persona order by " . $inputCodigo;
+    $sql = "select * from persona where codigo = '$codigo'";
 
     $resultado="";
 
     if (!( $resultado = $mysqli->query($sql))) { //Devuelve un objeto $resultado que si es Null cierra la conexión con la BD
         die();
         }
-
-    $resultadoCuentaPersonas = $resultado->num_rows; // Almacenamos el nro de Filas en la variable $resultadoCuentaRegistros
 
     $personas=[]; // Creamos un array de personas para almacenar los datos de las filas correspondientes
 
@@ -35,7 +33,9 @@ $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexió
 
   $objPersonas = new stdClass(); // Instancio un objeto que contendrá el array de personas + cantidad de registros
   $objPersonas->personas=$personas;
-  $objPersonas->cuenta=$resultadoCuentaPersonas;
+
   $salidaJson = json_encode($objPersonas); // Genera un Json que incluye los registros + la cantidad de registros.
   $mysqli->close();
+
+  echo $salidaJson;
 ?>
