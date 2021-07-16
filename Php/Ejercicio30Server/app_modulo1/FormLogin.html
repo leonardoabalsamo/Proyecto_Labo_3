@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario de Login</title>
+    <link rel="stylesheet" href="./estilo30server.css">
+
+  </head>
+  <body>
+    <div class="contenedor">
+      <h1 style="border:solid;">Inicio de Sesión</h1><br>
+
+      <form method="post" action="../ingresoalsistema.php" style="border:solid;">
+              <label for="usuario">Ingrese el usuario:</label><br>
+              <input type="text" name="usuario" placeholder="USUARIO:admin" required ><br>
+              <label for="password">Ingrese la clave:</label><br>
+              <input type="password" name="pass" placeholder="CONTRASEÑA:admin" required><br><br>
+              <input type="submit" name="submit" value="Entrar">
+      </form>
+
+    </div>
+  </body>
+</html>

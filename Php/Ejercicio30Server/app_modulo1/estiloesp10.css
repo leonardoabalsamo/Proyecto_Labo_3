@@ -33,6 +33,7 @@ thead [campo-dato="codigo"], thead [campo-dato="apellido"], thead [campo-dato="e
         box-sizing: border-box;
         padding: 10px;
         border-width: 2px;
+        cursor:pointer;
 }
 
 table tbody{
@@ -83,9 +84,9 @@ div.activa{ opacity: 1; pointer-events: auto; }
 
 #codAlta,#codModi, #apeAlta,#apeModi ,#edadAlta, #edadModi,  #puestoAlta, #puestoModi, #altaAlta, #altaModi,#areaAlta, #areaModi { width: 150px; height: 20px; margin-top:10px;}
 
+button{cursor:pointer;}
 
-
-#modalServer{ margin:auto; width: 50%; height: 50%; padding:10px; background-color: grey; color:white;}
+#modalServer{ margin:auto; width: 400px; height: 300px; padding:10px; background-color: grey; color:white;}
 #contServer{margin:auto; width:90%;height: 90%; padding:0%;}
 .activa{visibility: visible;}
 .desactiva{visibility: hidden;}

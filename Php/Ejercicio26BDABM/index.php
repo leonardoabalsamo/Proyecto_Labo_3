@@ -55,31 +55,31 @@
 
                         <div class="interno">
                           <label for="codigo">Codigo:</label><br>
-                          <input type="text" name="codigo" id="codAlta" required ><br>
+                          <input type="text" name="codigo" id="codAlta" required="required" ><br>
                         </div>
                         <div class="interno">
                           <label for="apellido">Apellido:</label><br>
-                          <input type="text" name="apellido" id="apeAlta" required><br>
+                          <input type="text" name="apellido" id="apeAlta" ><br>
                         </div>
                         <div class="interno">
                           <label for="edad">Edad:</label><br>
-                          <input type="text" name="edad" id="edadAlta" required><br>
+                          <input type="text" name="edad" id="edadAlta" ><br>
                         </div>
                         <div class="interno">
                           <label for="alta">Fecha de Alta:</label><br>
-                          <input type="date" name="alta" id="altaAlta" required><br>
+                          <input type="date" name="alta" id="altaAlta" ><br>
                         </div>
                         <div class="interno">
                           <label for="puesto">Puesto:</label><br>
-                          <input type="text" name="puesto" id="puestoAlta" required><br>
+                          <input type="text" name="puesto" id="puestoAlta" ><br>
                         </div>
                         <div class="interno">
                           <label for="area">Area:</label><br>
-                          <select name="area" id="areaAlta" required></select>
+                          <select name="area" id="areaAlta" ></select>
                         </div>
                         <div class="interno">
                           <label for="archivo">PDF:</label><br>
-                          <input type="file" id="btnArchivoAlta" name="documentoPdfA"/>
+                          <input type="file" id="btnArchivoAlta" name="documentoPdf"/>
                         </div>
                         <div class="interno">
                           <input type="submit" name="" id="EnviarAlta">
@@ -97,27 +97,27 @@
 
                         <div class="interno">
                           <label for="codigo">Codigo:</label><br>
-                          <input type="text" name="codigo" id="codModi" required ><br>
+                          <input type="text" name="codigo" id="codModi" required="required" ><br>
                         </div>
                         <div class="interno">
                           <label for="apellido">Apellido:</label><br>
-                          <input type="text" name="apellido" id="apeModi" required><br>
+                          <input type="text" name="apellido" id="apeModi" ><br>
                         </div>
                         <div class="interno">
                           <label for="edad">Edad:</label><br>
-                          <input type="text" name="edad" id="edadModi" required><br>
+                          <input type="text" name="edad" id="edadModi" ><br>
                         </div>
                         <div class="interno">
                           <label for="alta">Fecha de Alta:</label><br>
-                          <input type="date" name="alta" id="altaModi" required><br>
+                          <input type="date" name="alta" id="altaModi" ><br>
                         </div>
                         <div class="interno">
                           <label for="puesto">Puesto:</label>
-                          <input type="text" name="puesto" id="puestoModi" required><br>
+                          <input type="text" name="puesto" id="puestoModi" ><br>
                         </div>
                         <div class="interno">
                           <label for="area">Area:</label><br>
-                          <select name="area" id="areaModificacion" required></select>
+                          <select name="area" id="areaModi" ></select>
                         </div>
                         <div class="interno">
                           <label for="archivo">PDF:</label><br>
@@ -129,8 +129,8 @@
                     </div>
       </div>
 
-      <div class="modalServer">
-        <div class="contServer">
+      <div id="modalServer">
+        <div id="contServer">
 
         </div>
       </div>

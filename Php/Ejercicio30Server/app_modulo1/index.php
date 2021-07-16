@@ -2,19 +2,24 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Ejercicio 26 ABM</title>
+    <title>Ejercicio 30 Server</title>
     <link rel="stylesheet" href="./estiloesp10.css">
   </head>
   <body>
+
+    <?php require ('../manejoSesion.inc'); ?>
+
     <div id="contenedorModal">
 
     <div id="contenedor">
-      <h1>Empleados Empresa</h1>
+      <h1>Empleados</h1>
       <input readonly type="text"id="orden">
       <button style="margin-left:100px;" id="cargar">Cargar Datos</button>
       <button id="vaciar">Vaciar Datos</button>
       <button id="btnalta">Alta Registro</button>
+      <button id="btCierraSesion">Cierra Sesión</button>
     </div>
+
       <table id="tabla">
         <thead>
           <tr>
@@ -42,7 +47,7 @@
         </thead>
         <tbody id="bodytabla"></tbody>
       </table>
-      <footer><div id="totalRegistros"></div><a style="position:absolute;margin-left: 300px; text-align:center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href="../index.html">Volver al Indice</a></footer>
+      <footer><div id="totalRegistros"></div><a style="position:absolute;margin-left: 300px; text-align:center;padding:0.5%;color:black;border:solid;border-width:1px;border-color:black;"href=".../index.html">Volver al Indice</a></footer>
     </div>
 
       <div id="modalAlta">
@@ -55,31 +60,31 @@
 
                         <div class="interno">
                           <label for="codigo">Codigo:</label><br>
-                          <input type="text" name="codigo" id="codAlta" required ><br>
+                          <input type="text" name="codigo" id="codAlta" required="required" ><br>
                         </div>
                         <div class="interno">
                           <label for="apellido">Apellido:</label><br>
-                          <input type="text" name="apellido" id="apeAlta" required><br>
+                          <input type="text" name="apellido" id="apeAlta" ><br>
                         </div>
                         <div class="interno">
                           <label for="edad">Edad:</label><br>
-                          <input type="text" name="edad" id="edadAlta" required><br>
+                          <input type="text" name="edad" id="edadAlta" ><br>
                         </div>
                         <div class="interno">
                           <label for="alta">Fecha de Alta:</label><br>
-                          <input type="date" name="alta" id="altaAlta" required><br>
+                          <input type="date" name="alta" id="altaAlta" ><br>
                         </div>
                         <div class="interno">
                           <label for="puesto">Puesto:</label><br>
-                          <input type="text" name="puesto" id="puestoAlta" required><br>
+                          <input type="text" name="puesto" id="puestoAlta" ><br>
                         </div>
                         <div class="interno">
                           <label for="area">Area:</label><br>
-                          <select name="area" id="areaAlta" required></select>
+                          <select name="area" id="areaAlta" ></select>
                         </div>
                         <div class="interno">
                           <label for="archivo">PDF:</label><br>
-                          <input type="file" id="btnArchivoAlta" name="documentoPdfA"/>
+                          <input type="file" id="btnArchivoAlta" name="documentoPdf"/>
                         </div>
                         <div class="interno">
                           <input type="submit" name="" id="EnviarAlta">
@@ -97,27 +102,27 @@
 
                         <div class="interno">
                           <label for="codigo">Codigo:</label><br>
-                          <input type="text" name="codigo" id="codModi" required ><br>
+                          <input type="text" name="codigo" id="codModi" required="required" ><br>
                         </div>
                         <div class="interno">
                           <label for="apellido">Apellido:</label><br>
-                          <input type="text" name="apellido" id="apeModi" required><br>
+                          <input type="text" name="apellido" id="apeModi" ><br>
                         </div>
                         <div class="interno">
                           <label for="edad">Edad:</label><br>
-                          <input type="text" name="edad" id="edadModi" required><br>
+                          <input type="text" name="edad" id="edadModi" ><br>
                         </div>
                         <div class="interno">
                           <label for="alta">Fecha de Alta:</label><br>
-                          <input type="date" name="alta" id="altaModi" required><br>
+                          <input type="date" name="alta" id="altaModi" ><br>
                         </div>
                         <div class="interno">
                           <label for="puesto">Puesto:</label>
-                          <input type="text" name="puesto" id="puestoModi" required><br>
+                          <input type="text" name="puesto" id="puestoModi" ><br>
                         </div>
                         <div class="interno">
                           <label for="area">Area:</label><br>
-                          <select name="area" id="areaModificacion" required></select>
+                          <select name="area" id="areaModi" ></select>
                         </div>
                         <div class="interno">
                           <label for="archivo">PDF:</label><br>

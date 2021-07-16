@@ -1,3 +1,4 @@
+
 <?php
 define("SERVER","b1wxrcvtq9n5vzkulrp3-mysql.services.clever-cloud.com");
 define("USUARIO","uumcnhlukgml0fs3");

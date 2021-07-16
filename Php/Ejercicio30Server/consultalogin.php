@@ -1,19 +1,19 @@
 <?php
-define("SERVER","b1wxrcvtq9n5vzkulrp3-mysql.services.clever-cloud.com");
-define("USUARIO","uumcnhlukgml0fs3");
-define("PASS","R87rmtX6idkwQIDZeisO");
-define("BASE","b1wxrcvtq9n5vzkulrp3");
+
+define("SERVER","bl6yeqpr4m8fftwgsnti-mysql.services.clever-cloud.com");
+define("USUARIO","ugxsgko02xlc52mk");
+define("PASS","CDN6FhDlPoQBcboSkhfz");
+define("BASE","bl6yeqpr4m8fftwgsnti");
 $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexión con la BD
 
 
-      $codAlta =$_POST['codigo'];
-      $apeAlta =$_POST['apellido'];
-      $edadAlta =$_POST['edad'];
-      $altaAlta =$_POST['alta'];
-      $puestoAlta =$_POST['puesto'];
-      $areaAlta =$_POST['area'];
+    // el usuario es el orden
+      $usuario =$_POST['usuario'];
+      $clave =$_POST['clave'];
+      $clavemd5=md5($clave);
 
-      $sql = "update into persona (codigo,apellido,edad,alta,puesto,area) values (?,?,?,?,?,?)";
+
+      $sql = "select * from login where usuario LIKE ? and clave LIKE ? ";
 
       $respuesta = "";
       $resultado ="";
@@ -22,7 +22,7 @@ $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexió
               $respuesta = $respuesta . "<br/> Fallo la preparacion del Template: ('. $mysqli->errno .') " . $mysqli->error;
           }else{
 
-              if ( ! $sentencia->bind_param('ssisss', $codAlta, $apeAlta, $edadAlta, $altaAlta, $puestoAlta, $areaAlta) ) {
+              if ( ! $sentencia->bind_param('ss', $usuario, $clavemd5) ) {
                   $respuesta = $respuesta . "<br/>Falló la vinculación de parámetros simples: (' . $sentencia->errno . ') " . $sentencia->error;
               }else{
                   if ( ! $sentencia->execute() ) {
