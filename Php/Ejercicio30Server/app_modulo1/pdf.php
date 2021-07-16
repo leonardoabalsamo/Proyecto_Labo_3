@@ -19,7 +19,7 @@
 
           while($fila = $resultado->fetch_assoc()){
               $objPdf = new stdClass();
-              $objPdf->documentoPdf=base64_encode($fila['pdf']);
+              $objPdf->pdf=base64_encode($fila['pdf']);
           }
 
           $mysqli->close();

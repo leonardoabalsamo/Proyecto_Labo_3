@@ -84,7 +84,7 @@
                         </div>
                         <div class="interno">
                           <label for="archivo">PDF:</label><br>
-                          <input type="file" id="btnArchivoAlta" name="documentoPdf"/>
+                          <input type="file" id="btnArchivoAlta" name="pdf"/>
                         </div>
                         <div class="interno">
                           <input type="submit" name="" id="EnviarAlta">
@@ -126,7 +126,7 @@
                         </div>
                         <div class="interno">
                           <label for="archivo">PDF:</label><br>
-                          <input type="file" id="btnArchivoModi" name="documentoPdf"/>
+                          <input type="file" id="btnArchivoModi" name="pdf"/>
                         </div>
                         <div class="interno">
                           <input type="submit" name="" id="EnviarModi" value="EnviarModi">
@@ -134,8 +134,11 @@
                     </div>
       </div>
 
-      <div class="modalServer">
-        <div class="contServer">
+      <div id="modalServer">
+        <header class="headermodal">
+          <h2>Respuesta del Servidor:</h2><button id="botoncerrarServer">X</button>
+        </header>
+        <div id="contServer">
 
         </div>
       </div>

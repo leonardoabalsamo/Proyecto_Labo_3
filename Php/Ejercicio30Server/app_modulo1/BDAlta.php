@@ -29,14 +29,14 @@ $mysqli = new mysqli(SERVER,USUARIO,PASS,BASE); // Bbjeto que define la conexió
                $contenidoPdf = file_get_contents($_FILES['pdf']['tmp_name']);
            }
        }
-       
+
        $sql = "insert into persona (codigo,apellido,edad,alta,puesto,area,pdf) values (?,?,?,?,?,?,?)";
 
           if ( ! ($sentencia = $mysqli->prepare($sql)) ) {
               $respuesta = $respuesta . "<br/> Fallo la preparacion del Template: ('. $mysqli->errno .') " . $mysqli->error;
           }else{
 
-              if ( ! $sentencia->bind_param('ssisss', $codAlta, $apeAlta, $edadAlta, $altaAlta, $puestoAlta, $areaAlta,$contenidoPdf) ) {
+              if ( ! $sentencia->bind_param('ssissss', $codAlta, $apeAlta, $edadAlta, $altaAlta, $puestoAlta, $areaAlta,$contenidoPdf) ) {
                   $respuesta = $respuesta . "<br/>Falló la vinculación de parámetros simples: (' . $sentencia->errno . ') " . $sentencia->error;
               }else{
                   if ( ! $sentencia->execute() ) {

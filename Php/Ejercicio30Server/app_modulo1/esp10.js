@@ -92,6 +92,10 @@ $("#btnalta").click(function() {
     }
   });
 
+  $("#botoncerrarServer").click(function(){
+      $("#contenedorModal").addClass("activa");
+      $("#modalServer").css("visibility","hidden");
+  });
 
 $("#botoncerrarAlta").click(function(){
     $("#contenedorModal").addClass("activa");
@@ -278,8 +282,6 @@ function cargarPdf(codigo){
             objPdf = JSON.parse(respuestaDelServer);
             console.log(respuestaDelServer);
             $("#contenedorModal").addClass("cdesactiva");
-            $("#modalAlta").css("visibility","hidden");
-            $("#modalModi").css("visibility","hidden");
             $("#modalServer").css("visibility","visible");
             $("#contServer").empty();
             $("#contServer").html("<iframe width='100%' height='300px' src='data:application/pdf;base64,"+objPdf.pdf+"'></iframe>");
